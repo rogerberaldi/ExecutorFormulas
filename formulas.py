@@ -92,6 +92,10 @@ class myFormula:
         result = (f - 32) * 5/9
         return result
 
+    def __fahrenheit_to_kelvin(self, f):
+        f = float(f)
+        result = (f + 459.67 * 5) / 9
+
     '''
     Função de conversão de medidas
     E necessário implementar a condição considerando que valor deve ser 
@@ -149,12 +153,13 @@ class myFormula:
 
             strshow = "%.2f o Celsius\n%.2f o Fahrenheit\n%.2f o Kelvin" % (temp, f, k)
             return strshow, temp
+        
+        if unity == "Fahrenheit":
+            
+
 
         #TODO: implement unit == "Fahrenheit" and "Kelvin"
-        strshow = "case not implemented"
-        return strshow, 0
-
- 
+        
     def vmediaGetEnum(self):
         unity = ["km/h", "m/s", "mph"]
         varis = ["Variacao de espaco", "Intervalo de tempo"]
