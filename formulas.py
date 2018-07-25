@@ -91,6 +91,32 @@ class myFormula:
         result = (f - 32) * 5/9
         return result
 
+    '''
+    Funcao de conversao de medidas
+    E necessario implementar a condicao considerando que valor deve ser 
+    convertido, unit e a unidade de medida atual e unitToConvert 
+    e a unidade para qual valor sera convertido.
+    Se a condicao nao for satisfeita sera retornado -1
+    '''
+    def Converter(self, valor, unit, unitToConvert):
+        
+        if  unit == "km/h" and unitToConvert == "m/s":
+            return valor / 3.6
+        
+        elif unit == "m/s" and unitToConvert == "km/h":
+            return valor * 3.6
+        
+        #TODO:  elif unit == "km/h" and unitToConvert == "mph":
+        #Multiplica o valor em MPh por 1,60934 e achara em Km/h
+
+        #TODO:  elif unit == "mph" and unitToConvert == "km/h":
+        #Multiplica o valor em MPh por 1,60934 e achara em Km/h
+
+        #TODO:  elif unit == "Celsius", "Fahrenheit", "Kelvin"
+        #call __celsius_to*
+
+        return -9999
+
 
     def TemperaturaGetEnum(self):
         unity = ["Celsius", "Fahrenheit", "Kelvin"]
@@ -165,30 +191,14 @@ class myFormula:
         
         return strshow, result
     
-    '''
-    Funcao de conversao de medidas
-    E necessario implementar a condicao considerando que valor deve ser 
-    convertido, unit e a unidade de medida atual e unitToConvert 
-    e a unidade para qual valor sera convertido.
-    Se a condicao nao for satisfeita sera retornado -1
-    '''
-    def Converter(self, valor, unit, unitToConvert):
+    def PitagorasGetEnum(self):
+        varis = ["Hipotenusa a:", "Cateto b:", "Cateto c:"]  
+        unity = []  
+        Enum = "Teorema de Pitagoras escolha duas variaveis e a 3a sera exibida:"  
+        return varis, Enum, unity
+ 
         
-        if  unit == "km/h" and unitToConvert == "m/s":
-            return valor / 3.6
-        
-        elif unit == "m/s" and unitToConvert == "km/h":
-            return valor * 3.6
-        
-        #TODO:  elif unit == "km/h" and unitToConvert == "mph":
-        #Multiplica o valor em MPh por 1,60934 e achara em Km/h
-
-        #TODO:  elif unit == "mph" and unitToConvert == "km/h":
-        #Multiplica o valor em MPh por 1,60934 e achara em Km/h
-
-        return -9999
-        
-    def pitagoras(self, a, b, c):
+    def Pitagoras(self, a, b, c):
         
         a = float(a)
         b = float(b)
@@ -207,12 +217,27 @@ class myFormula:
                 
         return strshow, result
     
-    def pitagorasGetEnum(self):
-        varis = ["Hipotenusa a:", "Cateto b:", "Cateto c:"]  
+       
+    def FatorialGetEnum(self):
+        varis = ["Valor para Fatorial:"]  
         unity = []  
-        Enum = "Teorema de Pitagoras escolha duas variaveis e a 3a sera exibida:"  
+        Enum = "Entre com um valor para calculo de fatorial N!:"  
         return varis, Enum, unity
+ 
         
-    
-    
+    def Fatorial(self, fat):
+        fat = int(fat)
+
+        result = math.factorial(fat)
+
+        strshow = "Fat = "
+        for num in reversed(range(fat)):
+            strshow += "%d *" % (num+1)
+
+        strshow = strshow[:-1] 
+
+        strshow += "\nFat = %d" % result
+
+        return strshow, result
+
     
