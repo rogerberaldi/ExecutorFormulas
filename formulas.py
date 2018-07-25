@@ -36,7 +36,7 @@ Propósito: Classe myFormula disponibiliza funções para cálculos de fórmulas
                 return strshow, result
 """
 
-# Include inportant math libs such as:
+# Include important math libs such as:
 #   pow,sqrt,log
 #   sin,cos, etc
 import math
@@ -70,7 +70,7 @@ class myFormula:
         pass
     
 
-    # Hidden Functions to calculate de temperature
+    # Hidden Functions to calculate the temperature
     # To be used on Temperatura and Converter
     def __celsius_to_kelvin(self, c):
         c = float(c)
@@ -119,6 +119,13 @@ class myFormula:
 
         elif unit == "mph" and unitToConvert == "m/s":
             return (valor * 1.609344) / 3.6
+        
+        if unit == "Celsius" and unitToConvert == "Fahrenheit":
+            return (valor * 9) / 5 + 32
+
+        elif unit == "Celsius" and unitToConvert == "Kelvin":
+            return valor + 273
+
 
         #TODO:  elif unit == "Celsius", "Fahrenheit", "Kelvin"
         #call __celsius_to*
@@ -143,7 +150,7 @@ class myFormula:
             strshow = "%.2f o Celsius\n%.2f o Fahrenheit\n%.2f o Kelvin" % (temp, f, k)
             return strshow, temp
 
-        #TODO: implement unity == "Fahrenheit" and "Kelvin"
+        #TODO: implement unit == "Fahrenheit" and "Kelvin"
         strshow = "case not implemented"
         return strshow, 0
 
