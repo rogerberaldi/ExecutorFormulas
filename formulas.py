@@ -1,37 +1,38 @@
+# -*- coding: latin-1 -*-
 """
 Created on 21 de jul de 2018
 
 @author: Ryan Gazaniga <ryangazaniga@gmail.com>
 
-Proposito: Classe myFormula disponibiliza funcoes para calculos de formulas fisicas e matematicas.
-           As funcoes devem ser padronizadas e possuir implementacao de NomeFormula() e NomeFormulaGetEnum()
+Propósito: Classe myFormula disponibiliza funções para cálculos de fórmulas físicas e matemáticas.
+           As funções devem ser padronizadas e possuir implementação de NomeFormula() e NomeFormulaGetEnum()
            
-           Uma funcao GetEnum necessita do seguinte padrao
+           Uma função GetEnum necessita do seguinte padrão
             
             varis = ["Var1:", "Var2:", "Var3:"] # MAX 3 campos 
             unity = ["unidade1", "unidade2"] # MAX 3 campos 
-            Enum = "Titulo breve. Defina os dados:"
+            Enum = "Título breve. Defina os dados:" # Até 3 linhas (\\n)
            
-           A funcao GetEnum retorna os dados da seguinte maneira
+           A função GetEnum retorna os dados da seguinte maneira
            
                return varis, Enum, unity 
            
-           Uma funcao de calculo de formula necessita do seguinte padrao
+           Uma função de cálculo de fórmula necessita do seguinte padrão
            
-            -> Ser definida com ate 3 variaveis e caso tenha definido unity em GetEnum, precisa do unity
+            -> Ser definida com ate 3 variáveis e caso tenha definido unity em GetEnum, precisa do unity
 
                def NomeFormula(self, var1, var2, var3, unity):
           
-            -> Formatar as variaveis recebidas como string
+            -> Formatar as variáveis recebidas como string
                 var1 = float(var1)
         
-            -> Fazer o calculo na variavel result
+            -> Fazer o cálculo na variável result
                 result = var1 + var2 * var3
             
-            -> Definir deducao da formula para apresentar ao calculo na variavel strshow
+            -> Definir dedução da fórmula para apresentar ao cálculo na variável strshow
                 strshow = "S = %.2f + %.2f * %.2f\nS = %.2f + %.2f\nS = %.2f" % (s0, V, T, s0, (V*T), result)
             
-            -> Retornar as variaveis com resultado e output para o usuario
+            -> Retornar as variáveis com resultado e output para o usuário
                 return strshow, result
 """
 
@@ -92,11 +93,11 @@ class myFormula:
         return result
 
     '''
-    Funcao de conversao de medidas
-    E necessario implementar a condicao considerando que valor deve ser 
+    Função de conversão de medidas
+    E necessário implementar a condição considerando que valor deve ser 
     convertido, unit e a unidade de medida atual e unitToConvert 
-    e a unidade para qual valor sera convertido.
-    Se a condicao nao for satisfeita sera retornado -1
+    e a unidade para qual valor será convertido.
+    Se a condição não for satisfeita será retornado -1
     '''
     def Converter(self, valor, unit, unitToConvert):
         
@@ -107,10 +108,10 @@ class myFormula:
             return valor * 3.6
         
         #TODO:  elif unit == "km/h" and unitToConvert == "mph":
-        #Multiplica o valor em MPh por 1,60934 e achara em Km/h
+        #Multiplica o valor em MPh por 1,60934 e descobrir em Km/h
 
         #TODO:  elif unit == "mph" and unitToConvert == "km/h":
-        #Multiplica o valor em MPh por 1,60934 e achara em Km/h
+        #Multiplica o valor em MPh por 1,60934 e descobrir em Km/h
 
         #TODO:  elif unit == "Celsius", "Fahrenheit", "Kelvin"
         #call __celsius_to*
@@ -231,9 +232,9 @@ class myFormula:
         result = math.factorial(fat)
 
         strshow = "Fat = "
+        # Creating output 3 *2 *1 
         for num in reversed(range(fat)):
             strshow += "%d *" % (num+1)
-
         strshow = strshow[:-1] 
 
         strshow += "\nFat = %d" % result

@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# -*- coding: latin-1 -*-
+
 '''
 Created on 22 de jul de 2018
 
@@ -15,7 +17,6 @@ from formulas import myFormula
 from PyQt4 import QtGui, uic
 from PyQt4.QtGui import *
 from types import FunctionType
-
 
 class ExecutorFormulas(QtGui.QMainWindow):
 
@@ -34,14 +35,12 @@ class ExecutorFormulas(QtGui.QMainWindow):
         self.btnCalc.clicked.connect(self.calcular)
         self.btnConvert.clicked.connect(self.converter)
 
-
-        # Set disabled fields before function to be chosen
+        # Set disabled fields before function to be chosen é
         self.btnConvert.setEnabled(0)
         self.rb1.setEnabled(0)
         self.rb2.setEnabled(0)
         self.rb3.setEnabled(0)
 
-       
         # Create objFormulas from "import formulas" file formulas.py (Class myFormula)
         self.objFormulas = myFormula()
         #self.objFormulas = FormulasMatematicas()
@@ -173,7 +172,7 @@ class ExecutorFormulas(QtGui.QMainWindow):
                 self.showResult(strshow + "\nResultado = %.2f" % self.result)
 
             except:
-                self.showdialog("Erro Inesperado (Cags in run) durante execucao da formula. Verifique a implementacao da formula.", sys.exc_info()[0])
+                self.showdialog("Erro Inesperado (Cags in run) durante execução da formula. Verifique a implementacao da formula.", sys.exc_info()[0])
     
         
     '''
@@ -182,7 +181,7 @@ class ExecutorFormulas(QtGui.QMainWindow):
     def converter(self):
 
         if self.result == "":
-            self.textEdit.setText("Sem Resultado na memoria.")
+            self.textEdit.setText("Sem 'Result' na memoria.")
             return
 
         # Get actual Unity
@@ -242,8 +241,8 @@ class ExecutorFormulas(QtGui.QMainWindow):
                 self.setlbl()
                 self.setrb()
             except:
-                self.showdialog("Erro Inesperado (Cags in run) durante execucao da GetNum.\
-                        Verifique a implementacao da funcao GetNum.", sys.exc_info()[0])
+                self.showdialog("Erro Inesperado (Cags in run) durante execução da GetNum.\
+                        Verifique a implementação da função GetNum.", sys.exc_info()[0])
 
    
     '''
