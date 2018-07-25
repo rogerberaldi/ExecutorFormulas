@@ -2,12 +2,12 @@
 
 Math Formula Executer 
 
-Developed by: - Ryan Gazaniga <ryangazaniga@gmail.com>
-	      - Roger Beraldi Martins <rogerberaldi@gmail.com>
+Developed by: Ryan Gazaniga <ryangazaniga@gmail.com> and Roger Beraldi Martins <rogerberaldi@gmail.com>
 
 Propose: Simple interface program to provide easy implementation of math formulas.
 
 Road Map:
+
 	- Develop About Dialog;
 
 	- Include item menu for formula modules dynamically;
@@ -22,12 +22,12 @@ Road Map:
 
 Executor de Fórmulas Matemáticas
 
-Desenvolvido por: - Ryan Gazaniga <ryangazaniga@gmail.com>
-		  - Roger Beraldi Martins <rogerberaldi@gmail.com>
+Desenvolvido por: Ryan Gazaniga <ryangazaniga@gmail.com> e Roger Beraldi Martins <rogerberaldi@gmail.com>
 
 Objetivo: Programa para implementação de fórmulas matemáticas através de interface amigável ao usuário.
 
 Melhorias Planejadas:
+
 	- Desenvolver Dialog para apresentação do programa;
 
 	- Incluir Item de Menu para inclusão de Bibliotecas de Fórmulas dinamicamente;
