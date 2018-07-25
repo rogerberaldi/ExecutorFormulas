@@ -131,6 +131,10 @@ class ExecutorFormulas(QtGui.QMainWindow):
     '''
     def calcular(self):
         
+        if "Selecione uma formula" in self.comboBox.currentText():
+            self.showdialog("Por favor, selecione uma formula.", ["Fomula","Missing"])
+            return
+
         # If variaveis() returns false, show up dialog error for unvalid variables
         if(not self.variaveis()):
             self.showdialog("Por favor, insira os dados solicitados.", self.varis)
@@ -340,7 +344,6 @@ class ExecutorFormulas(QtGui.QMainWindow):
         self.textEdit.setText("")
 
         self.result = ""
-        self.unity = 0
     
     '''
     Function to print the output to the user at the textEdit
@@ -371,10 +374,10 @@ class ExecutorFormulas(QtGui.QMainWindow):
         
         #self.unidades()
         
-        debug = "Var1 = %s |Var2 = %s |Var3 = %s\nFunc = %s | Unidade = %s\nVaris %s\nUnity %s\nResult %s" % \
+        debug = "Var1 = '%s' | Var2 = '%s' | Var3 = '%s'\nFunc = '%s'\nResult = %s | Unidade = %s\nVaris %s\nUnity %s" % \
                 (self.leVar1.text(),self.leVar2.text(), self.leVar3.text(), 
-                 self.comboBox.currentText(), self.activeUnity,
-                 self.varis, self.unity, self.result) 
+                 self.comboBox.currentText(), self.result, self.activeUnity,
+                 self.varis, self.unity)
         self.textEdit.setText(debug)
         #self.textEdit.setText(self.lineEdit.text())
         #self.textEdit.setText(self.lineEdit.text())        
