@@ -89,12 +89,13 @@ class myFormula:
 
     def __fahrenheit_to_celsius(self,f):
         f = float(f)
-        result = (f - 32) * 5/9
+        result = (f - 32) * 5 / 9
         return result
 
     def __fahrenheit_to_kelvin(self, f):
         f = float(f)
-        result = (f + 459.67 * 5) / 9
+        result = (f + 459.67) * 5 / 9
+        return result
 
     '''
     Função de conversão de medidas
@@ -103,6 +104,7 @@ class myFormula:
     e a unidade para qual valor será convertido.
     Se a condição não for satisfeita será retornado -1
     '''
+
     def Converter(self, valor, unit, unitToConvert):
         
         if  unit == "km/h" and unitToConvert == "m/s":
@@ -155,9 +157,11 @@ class myFormula:
             return strshow, temp
         
         if unity == "Fahrenheit":
+            c = self.__fahrenheit_to_celsius(temp)    
+            k = self.__fahrenheit_to_kelvin(temp)
             
-
-
+            strshow = "%.2f o Fahrenheit\n%.2f o Celsius\n%.2f o Kelvin" % (temp, c, k)
+            return strshow, temp
         #TODO: implement unit == "Fahrenheit" and "Kelvin"
         
     def vmediaGetEnum(self):
