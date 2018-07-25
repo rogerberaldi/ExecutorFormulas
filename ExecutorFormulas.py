@@ -35,7 +35,7 @@ class ExecutorFormulas(QtGui.QMainWindow):
         self.btnCalc.clicked.connect(self.calcular)
         self.btnConvert.clicked.connect(self.converter)
 
-        # Set disabled fields before function to be chosen é
+        # Set disabled fields before function to be chosen 
         self.btnConvert.setEnabled(0)
         self.rb1.setEnabled(0)
         self.rb2.setEnabled(0)
@@ -60,7 +60,7 @@ class ExecutorFormulas(QtGui.QMainWindow):
         self.comboBox.setCurrentIndex(0)
         self.comboBox.currentIndexChanged.connect(self.novaFormula)
 
-        #Definindo controles e objetos:
+        #Defining controls and objects:
         self.varis = []
         self.varislen = 0
         self.unity = []
@@ -101,7 +101,7 @@ class ExecutorFormulas(QtGui.QMainWindow):
     def variaveis(self):
         
         #TODO: To analyse if all mandatory variables are 
-        #int/float numbers and not string (return false if string are found)
+        #int/float numbers and not strings (return false if any strings are found)
 
         if(self.varislen == 3): 
             self.x = self.leVar1.text()
@@ -140,10 +140,10 @@ class ExecutorFormulas(QtGui.QMainWindow):
             self.showdialog("Por favor, insira os dados solicitados.", self.varis)
             return
         
-        # Check and set unity
+        # Check and set unit
         self.unidades()
  
-        #Build up the string to be evalued to call selected formula
+        #Build up the string to be evaluated to call selected formula
         func = "self.objFormulas.%s" % self.comboBox.currentText()
 
         # If unity was defined we're going to return activeUnity to the Formula method
@@ -152,7 +152,7 @@ class ExecutorFormulas(QtGui.QMainWindow):
         else:
             aUnity = ""
         
-        # Include variable arguments to the string to be evalued 
+        # Include variable arguments to the string to be evaluated 
         if self.varislen == 3:
             func += "(self.x, self.y, self.z %s)" % aUnity
         elif(self.varislen == 2):
@@ -166,8 +166,8 @@ class ExecutorFormulas(QtGui.QMainWindow):
             self.showResult(strshow + "\nResultado = %.2f" % self.result)
         else:
 
-            # Executing the formula calculation under try/except error handling mechanism
-            # If some error happens during this block the except will handle the error
+            # Executing the formula calculation under "try/except" error handling mechanism
+            # If some error happens during this block the "except" will handle the error
             try:
                 # Execute the string as regular function call via eval()
                 strshow, self.result = eval(func)
@@ -188,20 +188,20 @@ class ExecutorFormulas(QtGui.QMainWindow):
             self.textEdit.setText("Sem 'Result' na memoria.")
             return
 
-        # Get actual Unity
+        # Get actual Unit
         unit = self.activeUnity
 
-        # Update unity selected
+        # Update unit selected
         self.unidades()
 
-        # Get the new selected unity
+        # Get the new selected unit
         unitToConvert = self.activeUnity
 
         if unit == unitToConvert:
             return
 
         if "Converter" in dir(self.objFormulas):
-            # Call the Convert method to process de unity conversion
+            # Call the Convert method to process de unit conversion
             # Should have the case implemented
             result = self.objFormulas.Converter(self.result, unit, unitToConvert)
             self.textEdit.setText("Convertendo:\nResultado %.2f %s para %s\n%.2f %s" % \
@@ -291,7 +291,7 @@ class ExecutorFormulas(QtGui.QMainWindow):
     '''
     def setrb(self):
 
-        # If we have 3 unities for this formula
+        # If we have 3 units for this formula
         if (len(self.unity) == 3):
             self.rb1.setText(self.unity[0])
             self.rb2.setText(self.unity[1])
@@ -303,7 +303,7 @@ class ExecutorFormulas(QtGui.QMainWindow):
             self.btnConvert.setEnabled(1)
             
 
-        # If we have 2 unities for this formula
+        # If we have 2 units for this formula
         if (len(self.unity) == 2):
             self.rb1.setText(self.unity[0])
             self.rb2.setText(self.unity[1])
@@ -315,7 +315,7 @@ class ExecutorFormulas(QtGui.QMainWindow):
             self.btnConvert.setEnabled(1)
         
 
-        # If we have 1 unities for this formula
+        # If we have 1 unit for this formula
         if(len(self.unity) == 1):
             self.rb1.setText(self.unity[0])
             self.rb2.setText("")
@@ -326,7 +326,7 @@ class ExecutorFormulas(QtGui.QMainWindow):
             self.btnConvert.setEnabled(0)
             
             
-        # If we have no unity for this formula
+        # If we have no unit for this formula
         if(len(self.unity) == 0):
             self.rb1.setEnabled(0)
             self.rb2.setEnabled(0)
