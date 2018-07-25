@@ -5,7 +5,9 @@ Created on 21 de jul de 2018
 @author: Ryan Gazaniga <ryangazaniga@gmail.com>
 """
 
-
+"""
+Classe Demo
+"""
 class myFormula:
     def __init__(self):
         pass
