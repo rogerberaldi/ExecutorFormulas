@@ -109,7 +109,11 @@ class myFormula:
         
         #Divide o valor em km/h por 0.6213711922  e descobrir em mph
         elif unit == "km/h" and unitToConvert == "mph":
-            return valor * 1.60934
+            return valor * 0.621371192
+        
+        elif unit == "mph" and unitToConvert == "km/h":
+            return valor * 1.609344
+
 
         #TODO:  elif unit == "mph" and unitToConvert == "km/h":
         #Multiplica o valor em MPh por 1,60934 e descobrir em Km/h
