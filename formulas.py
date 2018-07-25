@@ -114,16 +114,11 @@ class myFormula:
         elif unit == "mph" and unitToConvert == "km/h":
             return valor * 1.609344
 
-        elif unit is "m/s" and unitToConvert is "mph":
-            return valor * 3.6 * 0.621371192
+        elif unit == "m/s" and unitToConvert == "mph":
+            return (valor * 3.6) * 0.621371192
 
-        elif unit is "mph" and unitToConvert is "m/s":
-            return valor * 1.609344 / 3.6
-
-
-
-        #TODO:  elif unit == "mph" and unitToConvert == "km/h":
-        #Multiplica o valor em MPh por 1,60934 e descobrir em Km/h
+        elif unit == "mph" and unitToConvert == "m/s":
+            return (valor * 1.609344) / 3.6
 
         #TODO:  elif unit == "Celsius", "Fahrenheit", "Kelvin"
         #call __celsius_to*
@@ -184,7 +179,6 @@ class myFormula:
         
         return strshow, result
 
-    #TODO: Criar formulas deduzidas para calculo de outras variaveis da formula.  
     def EqHorariaS0GetEnum(self):
         varis = ["Espaco Percorrido:", "Velocidade:", "Tempo:"]
         unity = ["km/h", "m/s", "mph"]
