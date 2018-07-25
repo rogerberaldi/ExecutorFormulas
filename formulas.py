@@ -107,8 +107,9 @@ class myFormula:
         elif unit == "m/s" and unitToConvert == "km/h":
             return valor * 3.6
         
-        #TODO:  elif unit == "km/h" and unitToConvert == "mph":
-        #Multiplica o valor em MPh por 1,60934 e descobrir em Km/h
+        #Divide o valor em km/h por 0.6213711922  e descobrir em mph
+        elif unit == "km/h" and unitToConvert == "mph":
+            return valor * 1.60934
 
         #TODO:  elif unit == "mph" and unitToConvert == "km/h":
         #Multiplica o valor em MPh por 1,60934 e descobrir em Km/h
@@ -195,7 +196,7 @@ class myFormula:
     def PitagorasGetEnum(self):
         varis = ["Hipotenusa a:", "Cateto b:", "Cateto c:"]  
         unity = []  
-        Enum = "Teorema de Pitagoras escolha duas variaveis e a 3a sera exibida:"  
+        Enum = "Teorema de Pitagoras escolha duas variaveis, deixando a 3a como 0 e a 3a sera deduzida:"  
         return varis, Enum, unity
  
         
@@ -210,9 +211,12 @@ class myFormula:
             # a2 = b2 + c2
             # a = sqrt(pow(b,2),pow(c,2)) # can be used for any pow eg.: pow(3,4) = 3*3*3*3
             result = math.sqrt(math.pow(b, 2) + math.pow(c,2))
-
-        #TODO: if b == 0: 
-        #TODO: if c == 0:
+        
+        if b == 0:
+            result = math.sqrt(math.pow(a, 2) - math.pow(c, 2)) 
+        
+        if c == 0:
+            result = math.sqrt(math.pow(a, 2) - math.pow(b, 2))   
         
         strshow = str(result)
                 
