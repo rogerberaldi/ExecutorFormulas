@@ -197,6 +197,8 @@ class ExecutorFormulas(QtGui.QMainWindow):
         # Get the new selected unity
         unitToConvert = self.activeUnity
 
+        if unit == unitToConvert:
+            return
 
         if "Converter" in dir(self.objFormulas):
             # Call the Convert method to process de unity conversion
