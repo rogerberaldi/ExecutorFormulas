@@ -10,7 +10,7 @@ Road Map:
 
 	- Develop About Dialog;
 
-	- Include item menu for formula modules dynamically;
+	- Include item menu to import formula modules dynamically;
 
 	- Implement Latin-1 encoding to enable special chars to appear as it should
 
