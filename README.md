@@ -1,6 +1,6 @@
 # ExecutorFormulas en
 
-Math Formula Executer 
+Math Formula Executor 
 
 Developed by: Ryan Gazaniga <ryangazaniga@gmail.com> and Roger Beraldi Martins <rogerberaldi@gmail.com>
 
