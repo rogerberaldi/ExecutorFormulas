@@ -60,6 +60,22 @@ class ExecutorFormulas(QtGui.QMainWindow):
         self.comboBox.setCurrentIndex(0)
         self.comboBox.currentIndexChanged.connect(self.novaFormula)
 
+        #Defining TAB Order
+        self.setTabOrder(self.leVar1, self.leVar2)
+        self.setTabOrder(self.leVar2, self.leVar3)
+        self.setTabOrder(self.leVar3, self.leVar3)
+        self.setTabOrder(self.leVar3, self.comboBox)
+        self.setTabOrder(self.comboBox, self.rb1)
+        self.setTabOrder(self.rb1, self.rb2)
+        self.setTabOrder(self.rb2, self.rb3)
+        self.setTabOrder(self.rb3, self.btnClear)
+        self.setTabOrder(self.btnClear, self.btnCalc)
+        self.setTabOrder(self.btnCalc, self.btnConvert)
+        self.setTabOrder(self.btnConvert, self.leVar1)
+
+        self.leVar1.setFocus()
+        self.textEdit.setReadOnly(True)
+
         #Defining controls and objects:
         self.varis = []
         self.varislen = 0
