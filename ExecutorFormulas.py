@@ -332,6 +332,10 @@ class ExecutorFormulas(QtGui.QMainWindow):
             self.rb2.setEnabled(0)
             self.rb3.setEnabled(0)
             self.btnConvert.setEnabled(0)
+
+            self.rb1.setText("")
+            self.rb2.setText("")
+            self.rb3.setText("")
             
 
     '''

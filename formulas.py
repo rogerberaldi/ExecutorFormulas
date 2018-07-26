@@ -106,14 +106,16 @@ class myFormula:
     '''
 
     def Converter(self, valor, unit, unitToConvert):
-        
+       
+        valor = float(valor)
+
+
         if  unit == "km/h" and unitToConvert == "m/s":
             return valor / 3.6
         
         elif unit == "m/s" and unitToConvert == "km/h":
             return valor * 3.6
         
-        #Divide o valor em km/h por 0.6213711922  e descobrir em mph
         elif unit == "km/h" and unitToConvert == "mph":
             return valor * 0.621371192
         
@@ -132,9 +134,16 @@ class myFormula:
         elif unit == "Celsius" and unitToConvert == "Kelvin":
             return valor + 273
 
+        elif unit == "Fahrenheit" and unitToConvert == "Kelvin":
+            return self.__fahrenheit_to_kelvin(valor)
 
-        #TODO:  elif unit == "Celsius", "Fahrenheit", "Kelvin"
-        #call __celsius_to*
+        #TODO: elif unit == "Fahrenheit" and unitToConvert == "Celsius":
+        #TODO: else unit == "Kelvin" and unitToConvert == "Celsius":
+
+        elif unit == "Kelvin" and unitToConvert == "Fahrenheit":
+            #WOW: ;)
+            return self.__celsius_to_fahrenheit(self.__kelvin_to_celsius(valor))
+
 
         return -9999
 
@@ -162,7 +171,14 @@ class myFormula:
             
             strshow = "%.2f o Fahrenheit\n%.2f o Celsius\n%.2f o Kelvin" % (temp, c, k)
             return strshow, temp
-        #TODO: implement unit == "Fahrenheit" and "Kelvin"
+
+        if unity == "Kelvin":
+            c = self.__kelvin_to_celsius(temp)
+            f = self.__celsius_to_fahrenheit(c)
+
+            strshow = "%.2f o Kelvin\n%.2f o Celsius\n%.2f o Fahrenheit" % (temp, c, f)
+            return strshow, temp
+            
         
     def vmediaGetEnum(self):
         unity = ["km/h", "m/s", "mph"]
