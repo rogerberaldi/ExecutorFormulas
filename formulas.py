@@ -137,13 +137,15 @@ class myFormula:
         elif unit == "Fahrenheit" and unitToConvert == "Kelvin":
             return self.__fahrenheit_to_kelvin(valor)
 
-        #TODO: elif unit == "Fahrenheit" and unitToConvert == "Celsius":
-        #TODO: else unit == "Kelvin" and unitToConvert == "Celsius":
-
         elif unit == "Kelvin" and unitToConvert == "Fahrenheit":
             #WOW: ;)
             return self.__celsius_to_fahrenheit(self.__kelvin_to_celsius(valor))
+        
+        elif unit == "Fahrenheit" and unitToConvert == "Celsius":
+            return self.__fahrenheit_to_celsius(valor)
 
+        elif unit == "Kelvin" and unitToConvert == "Celsius":
+            return self.__kelvin_to_celsius(valor)
 
         return -9999
 
